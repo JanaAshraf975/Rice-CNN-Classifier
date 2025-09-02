@@ -103,7 +103,8 @@ Display probabilities with a bar chart highlighting the predicted class
 
 # 📊 Model Performance
 
-Validation Accuracy: 92.5%
+Validation Accuracy: 99.77%
+
 The model achieves high accuracy on the validation set.
 
 Training and validation loss/accuracy plots are generated for analysis.
