@@ -1,11 +1,7 @@
-# Rice-CNN-Classifier
+# 🌾 Rice-CNN-Classifier
 This project is a Convolutional Neural Network (CNN) based classifier trained on rice images to automatically predict rice varieties. The model is built with TensorFlow/Keras, trained on Kaggle, and deployed with Streamlit for an interactive web app.
 
-🌾 Rice CNN Classifier
-
-A deep learning project to classify rice grain images using a Convolutional Neural Network (CNN) built with TensorFlow/Keras. The project includes a Streamlit-based interactive interface for predicting rice types from images.
-
-📌 Overview
+# 📌 Overview
 
 This project demonstrates:
 
@@ -19,7 +15,7 @@ Deployment with Streamlit for user-friendly interaction
 
 The CNN model is trained on a rice image dataset and can predict among five rice types: Basmati, Jasmine, Arborio, Ipsala, and Karacadag.
 
-🧪 Requirements
+# 🧪 Requirements
 
 Python 3.8+
 
@@ -38,7 +34,7 @@ PIL (Pillow)
 You can install dependencies with
 `pip install -r requirements.txt`
 
-📂 Project Structure
+# 📂 Project Structure
 
 ```
 Rice-CNN-Classifier/
@@ -50,7 +46,7 @@ Rice-CNN-Classifier/
 └── README.md               # Project documentation
 
 ```
-🚀 Training the Model
+# 🚀 Training the Model
 
 1.Load dataset
 
@@ -91,7 +87,7 @@ loss, acc = model.evaluate(test_data)
 print(f"Validation Accuracy: {acc*100:.2f}%")
 ```
 
-🧑‍💻 Using the Streamlit App
+# 🧑‍💻 Using the Streamlit App
 
 Run the app:
 `streamlit run app.py`
@@ -105,12 +101,14 @@ Predict the rice type
 
 Display probabilities with a bar chart highlighting the predicted class
 
-📊 Model Performance
+# 📊 Model Performance
+
+Validation Accuracy: 92.5%
 The model achieves high accuracy on the validation set.
 
 Training and validation loss/accuracy plots are generated for analysis.
 
-📥 Dataset
+# 📥 Dataset
 The rice dataset can be downloaded from Kaggle:
 
 https://www.kaggle.com/datasets/muratkokludataset/rice-image-dataset
