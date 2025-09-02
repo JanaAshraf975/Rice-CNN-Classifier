@@ -50,6 +50,69 @@ Rice-CNN-Classifier/
 └── README.md               # Project documentation
 
 ```
+🚀 Training the Model
 
-ذط
-ذذ
+1.Load dataset
+
+Organize images in data/ folder with subfolders per rice type.
+
+2.Data preprocessing & augmentation
+
+`datagen = ImageDataGenerator(rescale=1./255, validation_split=0.2)`
+
+3.Build CNN model
+```
+model = Sequential([
+    Conv2D(32,(3,3),activation="relu",input_shape=(64,64,3)),
+    MaxPooling2D((2,2)),
+    Conv2D(64,(3,3),activation="relu"),
+    MaxPooling2D((2,2)),
+    Flatten(),
+    Dense(128, activation="relu"),
+    Dropout(0.5),
+    Dense(64, activation="relu"),
+    Dropout(0.2),
+    Dense(5, activation="softmax")
+])
+```
+4.Compile & train
+
+```
+model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
+model_history = model.fit(train_data, epochs=10, validation_data=test_data)
+```
+5.Save the trained model
+`model.save("rice_cnn_model.h5")`
+
+6.Evaluate model
+
+```
+loss, acc = model.evaluate(test_data)
+print(f"Validation Accuracy: {acc*100:.2f}%")
+```
+
+🧑‍💻 Using the Streamlit App
+
+Run the app:
+`streamlit run app.py`
+
+
+Features:
+
+Upload an image of a rice grain
+
+Predict the rice type
+
+Display probabilities with a bar chart highlighting the predicted class
+
+📊 Model Performance
+The model achieves high accuracy on the validation set.
+
+Training and validation loss/accuracy plots are generated for analysis.
+
+📥 Dataset
+The rice dataset can be downloaded from Kaggle:
+
+https://www.kaggle.com/datasets/muratkokludataset/rice-image-dataset
+
+Organize the images in subfolders per rice type inside data/ before training
